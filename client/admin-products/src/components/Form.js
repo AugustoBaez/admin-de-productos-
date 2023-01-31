@@ -4,6 +4,7 @@ const Form = () => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState()
     const [description, setDescription] = useState("")
+    // const [product, setProduct] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -18,23 +19,21 @@ const Form = () => {
         })
     }
 
-
-
     return (
         <div>
             <h1>Product Manager</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Title</label>
-                    <input type="text" onChange={(e) => setTitle(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setTitle(e.target.value)} value={title}></input>
                 </div>
                 <div>
                     <label>Price</label>
-                    <input type="text" onChange={(e) => setPrice(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setPrice(e.target.value)} value={price}></input>
                 </div>
                 <div>
                     <label>Description</label>
-                    <input type="text" onChange={(e) => setDescription(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setDescription(e.target.value)} value={description}></input>
                 </div>
                 <button type="submit">Create</button>
             </form>
