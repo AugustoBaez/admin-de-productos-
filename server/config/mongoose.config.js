@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+mongoose.get("strictQuery", true)
 mongoose.connect("mongodb://localhost/products", {
     useNewUrlParser: true,
     useUnifiedTopology: true,

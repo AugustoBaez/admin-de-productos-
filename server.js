@@ -1,8 +1,14 @@
 const express = require("express")
 const app = express()
+const cors = require("cors")
 require("./server/config/mongoose.config")
 
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+}))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 const routes = require("./server/routes/admin.routes")
 routes(app)
