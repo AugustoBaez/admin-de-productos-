@@ -24,7 +24,7 @@ const ProductList = () => {
       {productos.map((prod) => (
         <>
           <h2>
-            <a href={`/product/${prod._id}`}>{prod.title}</a>
+            <a href={`/${prod._id}`}>{prod.title}</a>
           </h2>
           {/*           <h2>{prod._id}</h2> */}
         </>
