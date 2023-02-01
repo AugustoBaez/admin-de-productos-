@@ -28,15 +28,15 @@ const Product = () => {
     console.log(specProduct)
 
     const deleteProduct = async () => {
-         try {
-                const result = await axios.delete(`http://localhost:8000/api/products/${id}`) //se pone el id del useparams aca para hacer fetch de esa id
+        try {
+            const result = await axios.delete(`http://localhost:8000/api/products/${id}`) //se pone el id del useparams aca para hacer fetch de esa id
                 .then((res) => {
                     navigate("/")
                 })
 
-            } catch (error) {
-                console.log(error)
-            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -45,6 +45,11 @@ const Product = () => {
             <h3>Price: ${prodPrice}</h3>
             <h3>{prodDesc}</h3>
             <button onClick={deleteProduct}>Delete</button>
+            <button>
+                <a href={`/update/${id}`}>
+                    Update
+                </a>
+            </button>
         </div>
     )
 }

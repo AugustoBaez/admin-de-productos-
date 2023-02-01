@@ -20,19 +20,7 @@ const ProductList = () => {
     getProductos();
   }, []);
 
-  const removeFromDom = productId => {
-        setProductos(productos.filter(prod => prod._id !== productId));
-    }
-
-  // const deleteProduct = (prodId) => {
-  //   axios.delete(`http://localhost/api/products/delete/${prodId}`)
-  //   .then(res => {
-  //     navigate("/")
-  //   }).catch((err) => {
-  //     console.log(err)
-  //   })
-  // }
-
+  
   return (
     <div>
       <h2>All Products</h2>
@@ -42,7 +30,6 @@ const ProductList = () => {
           <h2>
             <a href={`/${prod._id}`}>{prod.title}</a>
           </h2>
-          {/* <button onClick={() => deleteProduct(prod._id)}>Delete</button> */}
         </div>
         </>
       ))}
