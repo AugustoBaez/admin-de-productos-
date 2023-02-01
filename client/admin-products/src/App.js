@@ -9,11 +9,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Form />}></Route>
           <Route path="/product/:id" element={<Product />} />
-          {/* <Route path="/main" element={<ProductList />}></Route> */}
         </Routes>
       </BrowserRouter>
-      {/* <Form />
-      <ProductList /> */}
     </div>
   );
 }
