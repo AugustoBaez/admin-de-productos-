@@ -25,7 +25,7 @@ module.exports.updateProduct = (req, res) => {
 }
 
 module.exports.deleteProduct = (req, res) => {
-    Product.deleteProduct({ _id: req.params.id })
+    Product.deleteOne({ _id: req.params.id })
         .then((result) => res.json({ result: result }))
         .catch((error) => res.json({ message: "error deleting product", error }))
 
