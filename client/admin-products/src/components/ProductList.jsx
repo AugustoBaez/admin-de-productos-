@@ -8,7 +8,7 @@ const ProductList = () => {
   useEffect(() => {
     const getProductos = async () => {
       try {
-        const result = await axios.get("http://localhost:8000/api/products");
+        const result = await axios.get("http://localhost:8000/api/products/");
         setProductos(result.data.product.map((product) => product));
       } catch (error) {
         console.log(error);

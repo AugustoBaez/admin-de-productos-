@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
+import ProductList from './ProductList'
 const Form = () => {
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState()
@@ -17,8 +18,6 @@ const Form = () => {
             console.log(error, "error haciendo post")
         })
     }
-
-
 
     return (
         <div>
@@ -38,6 +37,7 @@ const Form = () => {
                 </div>
                 <button type="submit">Create</button>
             </form>
+            <ProductList />
         </div>
     )
 }
