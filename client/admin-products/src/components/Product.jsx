@@ -28,7 +28,7 @@ const Product = () => {
         <div>
             <h2>{prodTitle}</h2>
             <h3>Price: ${prodPrice}</h3>
-            <h3>{prodDesc}</h3>
+            <h3>Description: {prodDesc}</h3>
             <DeleteBtn />
             <button>
                 <a href={`/update/${id}`}>

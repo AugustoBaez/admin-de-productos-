@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import ProductList from './ProductList'
-const Form = () => {
-    const [title, setTitle] = useState("")
-    const [price, setPrice] = useState()
-    const [description, setDescription] = useState("")
+const Form = ({ initialTitle, initialPrice, initialDescription, handleSubmit }) => {
+    const [title, setTitle] = useState(initialTitle)
+    const [price, setPrice] = useState(initialPrice)
+    const [description, setDescription] = useState(initialDescription)
 
-    const handleSubmit = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault()
         axios.post("http://localhost:8000/api/product/new", {
             title,
             price,
             description
         }).then((res) => {
+            setTitle(...title)
+            setPrice(...price)
+            setDescription(...description)
             console.log(res, "succesful")
         }).catch((error) => {
             console.log(error, "error haciendo post")

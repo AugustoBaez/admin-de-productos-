@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { useParams, useNavigate } from 'react-router-dom'
+import Form from './Form'
 const Update = () => {
 
     const [title, setTitle] = useState("")
-    const [price, setPrice] = useState()
+    const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
 
     const { id } = useParams()
@@ -38,9 +39,9 @@ const Update = () => {
     }
     return (
         <div>
-            <h1>Product Manager</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <Form title="" price="" description=""/>
+                {/* <div>
                     <label>Title</label>
                     <input type="text" onChange={(e) => setTitle(e.target.value)}></input>
                 </div>
@@ -51,7 +52,7 @@ const Update = () => {
                 <div>
                     <label>Description</label>
                     <input type="text" onChange={(e) => setDescription(e.target.value)}></input>
-                </div>
+                </div> */}
                 <button type="submit">Create</button>
             </form>
         </div>
