@@ -1,18 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom'
+import DeleteBtn from "./DeleteBtn";
+
 const ProductList = () => {
   const [productos, setProductos] = useState([]);
-  // const [prodId, setProdId] = useState([]);
-  // const navigate = useNavigate()
-
 
   useEffect(() => {
     const getProductos = async () => {
       try {
         const result = await axios.get("http://localhost:8000/api/products/");
         setProductos(result.data.product.map((product) => product));
-        // setProdId(result.data.product.map((product) => product._id));
       } catch (error) {
         console.log(error);
       }
@@ -20,17 +17,18 @@ const ProductList = () => {
     getProductos();
   }, []);
 
-  
+
   return (
     <div>
       <h2>All Products</h2>
       {productos.map((prod) => (
         <>
-        <div className="products">
-          <h2>
-            <a href={`/${prod._id}`}>{prod.title}</a>
-          </h2>
-        </div>
+          <div className="products">
+            <h2>
+              <a href={`/${prod._id}`}>{prod.title}</a>
+            </h2>
+            <DeleteBtn id={prod._id} product={productos} setProductos={setProductos}/>
+          </div>
         </>
       ))}
     </div>
